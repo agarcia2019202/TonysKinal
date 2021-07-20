@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEmpresas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e5f89446-be15-4e21-9e21-69d2f9692f90">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[call sp_ListarEmpresas]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="555" height="68" uuid="4657e27e-9aab-4780-b205-0e2850fa56f4"/>
+				<imageExpression><![CDATA["C:\\Users\\Hermanos García\\Documents\\NetBeansProject\\TonysKinalIN5BM2019202\\src\\org\\angelgarcia\\img\\Encabezado.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="469" y="35" width="86" height="42" uuid="1f4096fe-dee0-4e7c-8140-1adfc9cca51e"/>
+				<imageExpression><![CDATA["C:\\Users\\Hermanos García\\Documents\\NetBeansProject\\TonysKinalIN5BM2019202\\src\\org\\angelgarcia\\img\\KinalLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="336" y="39" width="160" height="29" forecolor="#000000" uuid="b826b825-8022-4e54-bb19-23a8116578dd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="24" isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Tony´s Kinal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="56" uuid="4fe487ff-0e79-4f99-8249-e6b11448a26c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de Empresas]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="0" y="5" width="555" height="25" forecolor="#FFFFFF" backcolor="#0099FF" uuid="64a2354f-a4cb-4265-aa86-a20325fc86c2"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="10" width="100" height="20" uuid="b3e38281-7705-47ec-9807-88dece280e59"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Código Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="10" width="100" height="20" uuid="51c0f420-b4f5-4a33-9888-80958661ee50"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Nombre Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="289" y="10" width="100" height="20" uuid="024cebb3-653f-4994-81ee-e33fea541b73"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Dirección]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="10" width="100" height="20" uuid="96d6e5e1-9445-45fd-b403-92a5f6505ef8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="0" width="100" height="20" uuid="2679d281-1bf1-4670-84bd-22b6a7181d68"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codigoEmpresa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="26" width="555" height="1" forecolor="#CCCCFF" uuid="2f3eb86d-12fe-4161-9672-b444a5d364ad"/>
+			</line>
+			<textField>
+				<reportElement x="289" y="1" width="100" height="20" uuid="1b1d0e9d-717f-4e68-b730-fa39626a56b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="1" width="100" height="20" uuid="e0955365-3f4d-4f46-8466-99bf08863300"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="1" width="117" height="20" uuid="ad798302-e962-4c41-b158-cec97a051032"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nombreEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="41" width="555" height="12" forecolor="#0099FF" backcolor="#0099FF" uuid="6566c04c-d16e-4a07-b5c8-2323646b3d6c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="41" width="198" height="12" forecolor="#6699FF" backcolor="#6699FF" uuid="3df1ef6a-dd4d-4de8-acb6-cb6ef3505db8"/>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>

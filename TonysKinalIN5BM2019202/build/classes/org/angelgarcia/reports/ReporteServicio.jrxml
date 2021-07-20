@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicio" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9851de18-eb07-42ae-ab07-0d49bcb71015">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="28"/>
+	<parameter name="codServicio" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\Hermanos García\\Documents\\NetBeansProject\\TonysKinalIN5BM2019202\\src\\org\\angelgarcia\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[CALL sp_ListarReporteServicio($P{codServicio});]]>
+	</queryString>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="servicios_codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="platos_codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="752" height="85" uuid="93ab552e-321c-4108-b701-bbbc0d0ad8df"/>
+				<imageExpression><![CDATA["C:\\Users\\Hermanos García\\Documents\\NetBeansProject\\TonysKinalIN5BM2019202\\src\\org\\angelgarcia\\img\\Encabezado.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement x="597" y="46" width="86" height="42" uuid="8e527afe-d8ae-43b3-a15a-69c944e675ab"/>
+				<imageExpression><![CDATA["C:\\Users\\Hermanos García\\Documents\\NetBeansProject\\TonysKinalIN5BM2019202\\src\\org\\angelgarcia\\img\\KinalLogo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="462" y="51" width="160" height="29" forecolor="#000000" uuid="5dd03b3e-4399-4b06-95c1-e21a18ea9262"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="24" isBold="false" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Tony´s Kinal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="76" width="752" height="56" uuid="b68137fe-c8ab-429f-b757-0668532ec8a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="18" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Reporte de Servicio]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="186" splitType="Stretch">
+			<textField>
+				<reportElement x="75" y="87" width="145" height="20" uuid="f00e897d-ba41-4080-aef8-5990348391df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{servicios_codigoServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="75" y="40" width="145" height="20" uuid="e4f8873d-27b6-456c-a9da-6670fbb9e54d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Codigo de Servicio:]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="467" y="4" width="255" height="171" backcolor="#66CCFF" uuid="12e141ee-f5e2-4e5f-949d-8026a856523a"/>
+			</rectangle>
+			<subreport>
+				<reportElement x="514" y="8" width="163" height="153" uuid="0d506dc9-0c67-48e7-86ca-cca6a4bd2e73"/>
+				<subreportParameter name="codServicio">
+					<subreportParameterExpression><![CDATA[$P{codServicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SubReporteServicio.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="10" width="752" height="20" forecolor="#0099FF" uuid="c4179c1a-ea2f-4106-9c84-8af69b3ac7b0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="60" y="10" width="128" height="20" uuid="cfed9fe2-1636-4ed6-b550-a5f843f330c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Cantidad de Platos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="10" width="135" height="20" uuid="586346af-c839-4390-af6c-4ff63b3c12ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Plato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="569" y="10" width="117" height="20" uuid="da084491-df00-41d6-9516-4aa5f4cb54b3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Futura Std Medium" size="11"/>
+				</textElement>
+				<text><![CDATA[Tipo de Plato]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="0" width="128" height="20" uuid="3870d05f-39de-4afb-b5f5-6a341119b7eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="569" y="0" width="117" height="20" uuid="8d636421-4861-4c6e-8959-ea4d2d753a51"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{descripcionTipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="313" y="1" width="135" height="20" uuid="88181a68-7aa7-4b17-bb2e-26f608d00a1f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombrePlato}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="752" height="1" forecolor="#CCCCFF" uuid="b076e1b2-f1c1-43b7-abb5-56a5a18da24e"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="42" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="30" width="752" height="12" forecolor="#0099FF" backcolor="#0099FF" uuid="c3c8c92d-0659-4537-8ed4-f1f427006cb2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="30" width="279" height="12" forecolor="#6699FF" backcolor="#6699FF" uuid="b2953610-5a31-4f81-9251-fa04d1687510"/>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>

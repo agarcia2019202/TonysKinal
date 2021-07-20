@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.angelgarcia.controller.PrincipalController">
+   <children>
+      <ImageView fitHeight="392.0" fitWidth="820.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Inicio.png" />
+         </image>
+      </ImageView>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Modulos">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#vistaEmpresas" text="Empresas" />
+              <MenuItem mnemonicParsing="false" onAction="#vistaEmpleados" text="Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaServicios" text="Servicios" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaPresupuestos" text="Presupuestos" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaProductos" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaPlatos" text="Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaTipoPlato" text="Tipo Platos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Entidades de Unión">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#vistaServiciosHasEmpleados" text="Servicios has Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaServiciosHasPlatos" text="Servicios has Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#vistaProductosHasPlatos" text="Productos has Plato" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Acerca de...">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#vistaAcercaDe" text="Acerca del Programador" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
